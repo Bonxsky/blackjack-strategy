@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Strategy Advisor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cards"></i> Blackjack Strategy Advisor</h1>
+            <p>Advanced tool to help you make optimal decisions in Blackjack based on 8-deck basic strategy</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="input-section">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Dealer's Card</h2>
+                <div class="input-group">
+                    <label>Select the dealer's visible card:</label>
+                    <div class="card-selector" id="dealer-cards"></div>
+                    <div class="dealer-card">
+                        <div id="selected-dealer-card">Not selected</div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title"><i class="fas fa-user"></i> Your Cards</h2>
+                <div class="input-group">
+                    <label>Select your first two cards:</label>
+                    <div class="card-selector" id="player-cards"></div>
+                    <div class="selected-cards">
+                        <div class="player-card-display" id="player-card-1">?</div>
+                        <div class="player-card-display" id="player-card-2">?</div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button id="get-advice-btn" class="btn primary">
+                        <i class="fas fa-lightbulb"></i> Get Strategy Advice
+                    </button>
+                    <button id="reset-btn" class="btn secondary">
+                        <i class="fas fa-redo"></i> Reset Cards
+                    </button>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Strategy Recommendation</h2>
+                
+                <div class="advice-container">
+                    <div id="advice-result" class="advice">Select your cards</div>
+                    <div id="special-advice" class="special-advice"></div>
+                    
+                    <div class="action-explanation">
+                        <div class="explanation-title"><i class="fas fa-info-circle"></i> Action Explanation:</div>
+                        <div id="action-details">Select dealer's card and your cards to get strategy advice</div>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">DECKS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">0.5%</div>
+                        <div class="stat-label">HOUSE EDGE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">S17</div>
+                        <div class="stat-label">DEALER STANDS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2><i class="fas fa-graduation-cap"></i> Strategy Guide</h2>
+            <div class="strategy-points">
+                <div class="strategy-item">
+                    <div class="strategy-icon hit"><i class="fas fa-plus-circle"></i></div>
+                    <div class="strategy-content">
+                        <h3>HIT (Take Card)</h3>
+                        <p>Take an additional card when your hand value is low or dealer has a strong card (7-A)</p>
+                    </div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-icon stand"><i class="fas fa-hand-paper"></i></div>
+                    <div class="strategy-content">
+                        <h3>STAND (Stay)</h3>
+                        <p>Keep your current hand when value is sufficient or dealer shows weak card (2-6)</p>
+                    </div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-icon double"><i class="fas fa-times-circle"></i></div>
+                    <div class="strategy-content">
+                        <h3>DOUBLE (Double Down)</h3>
+                        <p>Double your bet when you have a strong starting hand (9-11) and dealer shows weakness</p>
+                    </div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-icon split"><i class="fas fa-code-branch"></i></div>
+                    <div class="strategy-content">
+                        <h3>SPLIT (Split Pair)</h3>
+                        <p>Split matching cards to play two separate hands, especially for Aces and 8s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Blackjack Strategy | Bonxsky</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
